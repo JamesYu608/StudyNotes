@@ -83,7 +83,7 @@
 
 * Semantic Networks / graphs
 
-  ![Example of a semantic network](./Semantic_Net.svg)
+  <img src="./Semantic_Net.jpg" width="350">
   From Wikipedia
   
 #### 2. (Machine) Learning
@@ -100,7 +100,7 @@
 
 **Markov Decision Process**
 
-<img src="./Simple_Markovkate.svg" width="150">
+<img src="./Simple_Markovkate.jpg" width="150">
 A simple two-state Markov chain from WikiPedia
 
 #### 4. Search and Optimization
