@@ -83,8 +83,8 @@
 
 * Semantic Networks / graphs
 
-  <img src="./Semantic_Net.jpg" width="350">
-  From Wikipedia
+  <img src="./res/Semantic_Net.jpg" width="350">
+  *From Wikipedia*
   
 #### 2. (Machine) Learning
 從現有的資料，建構一個系統能做出最佳的決定
@@ -100,8 +100,8 @@
 
 **Markov Decision Process**
 
-<img src="./Simple_Markovkate.jpg" width="150">
-A simple two-state Markov chain from WikiPedia
+<img src="./res/Simple_Markovkate.jpg" width="150">
+*A simple two-state Markov chain from WikiPedia*
 
 #### 4. Search and Optimization
 在許多可能性中，找出最好的選擇，例如下棋(最有可能勝利的一步)、足球(最有可能得分的行動)、知識問答(最有可能是正確的答案)
