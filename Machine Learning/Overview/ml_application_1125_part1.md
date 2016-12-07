@@ -8,7 +8,6 @@
 * [人工智慧的定義與歷史](#history)
 * [人工智慧現在的發展與應用](#now)
 * [人工智慧的未來: 從機器學習到機器發明](#future)
-* [Q & A](#q-and-a)
 
 ## <a name="history"></a>人工智慧的定義與歷史
 ### 人工智慧的定義
@@ -156,38 +155,4 @@ $$ \text{Big Data} + \text{Knowledge Representation} + \text{ML} = \text{Weak AI
 3. 從機器學習到機器發明 (不久的將來，許多科學新知將由AI發現)
     
    Machine Memorizing -> Learning -> Discovering
-
-## <a name="q-and-a"></a>Q & A
-### 問題: 在處理有x卻沒有y的問題，該怎麼解決?
-一般來說怎麼解決是case by case，例如:
-
-1. 使用unsupervised learning
-2. 抽樣去標記y -> semi-supervise learning
-3. 用類似的資料集的y，透過轉換函數轉成我們目標變數y (transfer learning)
-
-### 問題: Data Mining, AI, Machine Learning, Deep learning的關係性？相同或不同處？
-AI是目標，是比較大的集合
-
-Data Driven(透過資料學東西)只是其中的一種實現方法 (Data Mining + Machine Learning)
-
-也可能完全不需要data，例如專家系統
-
-Deep Learning是Machine Learning的一種技巧
-
-#### 其它講者的看法:
-看法一(某講座):
-
-* 機器學習：透過資料及其特徵來訓練模型 (train model)
-* 深度學習：透過資料來建構模型及其適合的特徵 (train model & feature)
-
-看法二(林軒田，從ML的觀點看其它topic):
-
-* vs Data Mining
-    * 若感興趣的property相同，DM=ML
-    * 若感興趣的property相關，DM和ML可以互相幫助
-    * 傳統的DM主要在增進large database的計算效率，但<mark>現在DM和ML已經漸漸難以區分</mark>
-* vs Statistics
-    * Statistics是實現ML的"其中一種"方法
-* vs AI
-    * ML是實現AI的"其中一種"方法
 
