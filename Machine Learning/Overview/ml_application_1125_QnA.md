@@ -10,7 +10,7 @@
 2. 抽樣去標記y -> semi-supervise learning
 3. 用類似的資料集的y，透過轉換函數轉成我們目標變數y (transfer learning)
 
-## 問題: Data Mining, AI, Machine Learning, Deep learning的關係性？相同或不同處？
+## 問題: Data Mining, AI, Machine Learning, Deep learning的關係性? 相同或不同處?
 AI是目標，是比較大的集合
 
 Data Driven(透過資料學東西)只是其中的一種實現方法 (Data Mining + Machine Learning)
@@ -36,14 +36,14 @@ Deep Learning是Machine Learning的一種技巧
 * vs AI
     * ML是實現AI的"其中一種"方法
 
-## 請問SVM現在還有研究的發展嗎？ 還是已經是過時的演算法了
+## 請問SVM現在還有研究的發展嗎? 還是已經是過時的演算法了
 已經很成熟，從研究的角度已經沒有這麼多東西可以做
 
 但不代表實務上沒有用，也有許多相對應的lib
 
 Deep Learning可能過兩年也是差不多 (TensorFlow...etc.)
 
-## Natural Language Processing (NLP)在AI和ML是否具有一定的重要性？中文自然語言處理是否遇到許多瓶頸與問題？
+## Natural Language Processing (NLP)在AI和ML是否具有一定的重要性? 中文自然語言處理是否遇到許多瓶頸與問題?
 釐清問題: NLP是AI中的一個重要問題(Machine Learning是非常重要的實作技術)
 
 NPL的困難不僅限於中文，是對於諷刺、反串、倒裝等很難去辨識 (有時候連人都沒辦法第一時間了解)
@@ -53,16 +53,16 @@ Strong understanding短期內很難
 ## 比較好的方法，可能要跑很久，memory不夠大，計算的power不夠，有沒有適合的方法解決問題?
 Resource Constrain Learning
 
-## Feature越多越好嗎？還是由訓練者決定最重要的feature進去訓練模型即可
+## Feature越多越好嗎? 還是由訓練者決定最重要的feature進去訓練模型即可
 一般來說，不確定就丟，若不重要model最後會給低的weight
 
-## 推薦系統中，通常會把"負"分的特性(不喜歡的item、評分低的item)用到系統中嗎?這樣的推薦效果會比較好嗎?
+## 推薦系統中，通常會把"負"分的特性(不喜歡的item、評分低的item)用到系統中嗎? 這樣的推薦效果會比較好嗎?
 通常喜歡若是3，普通2，不喜歡我們不會用1，而是將它shift到負的
 
 要解需要使用另一類的技巧
 
-## 如果要做Online learning這個task，要拿多久或是多少的資料量來training才夠呢?另外要training一個model，一定要把所有的data拿來重新train嗎?還是可以用新進的資料based on舊model再train就好了。
-Depend on task:
+## 如果要做Online learning這個task，要拿多久或是多少的資料量來training才夠呢? 另外要training一個model，一定要把所有的data拿來重新train嗎? 還是可以用新進的資料based on舊model再train就好了?
+取決於要解決的問題:
 
 1. 會一直變(e.g. 股票)，就要一直跑
 2. 只是因為資料不夠多所以要online learning，資料本身不太會變，跑到一定程度就可以停
