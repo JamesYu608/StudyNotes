@@ -28,13 +28,13 @@ Your Code -> **Syntax Parsers (一個字一個字parse)** -> Computer Instructio
     
 例如下面這個case，以function `b`而言:
 
-``` JavaScript
+```javaScript
 function a() {...}
 function b() {...}
 ```
 它的code在`Global` level中，跟它同level的有function `a`，而下面這個case:
 
-```JavaScript
+```javaScript
 function a() {
     function b() {...}
 }
@@ -63,7 +63,7 @@ Execution context除了執行當前function的code以外，**還包含了一些�
 
 且在`Global`的execution context，`this`指向`Global Object` (也就是window)
 
-``` JavaScript
+```javaScript
 var a = 'Hello, world!';
 function b() {...}
 ```
@@ -89,7 +89,7 @@ function b() {...}
 
 undefined是一個特別的keyword，會佔memory space，代表此變數還沒設值
 
-``` JavaScript
+```javaScript
 var a;
 console.log(a);
 
@@ -153,7 +153,7 @@ b的execution context結束，從stack裡pop出後，回到`Global`的execution 
 
 只有在execution階段跑到`let`的statement的時候，才可以access
 
-``` JavaScript
+```javaScript
 console.log(name); // ReferenceError
 let name = "John";
 ```
@@ -164,7 +164,7 @@ let name = "John";
 
 Case 1:
 
-``` JavaScript
+```javaScript
 function b() {...}
 function a() {...}
 ```
@@ -173,7 +173,7 @@ function a() {...}
 
 Case 2:
 
-``` JavaScript
+```javaScript
 function a() {
     function b() {...}
 }
@@ -188,7 +188,7 @@ function a() {
 
 思考下面這個例子:
 
-``` JavaScript
+```javaScript
 function b() {
     console.log(myVar);
 }
