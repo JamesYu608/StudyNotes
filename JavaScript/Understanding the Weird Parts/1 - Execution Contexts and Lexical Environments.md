@@ -1,5 +1,5 @@
 # Execution Contexts and Lexical Environments
-from [JavaScript: Understanding the Weird Parts](https://www.udemy.com/understand-javascript/learn/v4/overview)
+from [JavaScript: Understanding the Weird Parts](https://www.udemy.com/understand-JavaScript/learn/v4/overview)
 
 ## Outline
 * [Syntax Parsers / Lexical Environments / Execution Contexts](#sle)
@@ -13,7 +13,7 @@ from [JavaScript: Understanding the Weird Parts](https://www.udemy.com/understan
     * [Event-Driven / Event Loop](#event-loop)
 
 ## <a name="sle"></a>Syntax Parsers / Lexical Environments / Execution Contexts
-這三個名詞對於理解Javascript的運作原理非常重要，所以這邊先它們一個較整體的定義，之後會有許多例子來說明實際作用在什麼地方
+這三個名詞對於理解JavaScript的運作原理非常重要，所以這邊先它們一個較整體的定義，之後會有許多例子來說明實際作用在什麼地方
 ### 1. Syntax Parsers
 
 *__A program that reads your code and determines what it does and if its grammar is valid.__*
@@ -26,64 +26,56 @@ Your Code -> **Syntax Parsers (一個字一個字parse)** -> Computer Instructio
 
 白話一點說: Where your code's written and "what surrounds it"
     
-例如下面這個case，以function b而言:
+例如下面這個case，以function `b`而言:
 
-``` javascript
+``` JavaScript
+function a() {...}
+function b() {...}
+```
+它的code在`Global` level中，跟它同level的有function `a`，而下面這個case:
+
+```JavaScript
 function a() {
-    // ...
-}
-
-function b() {
-    // ...
+    function b() {...}
 }
 ```
-它的code在global level中，跟它同level的有function a，而下面這個case:
-
-```javascript
-function a() {
-    function b() {
-        // ...
-    }
-    // ...
-}
-```
-它的code在function a中
+它的code在function `a`中
 
 *__什麼是Global?__ -> Not Inside a Function*
 
 ### 3. Execution Contexts
 *__A wrapper to help manage the code that is running__*
     
-程式的進入點 (global)，以及接下來每個執行到的function，都有自己的execution context (由Javascript engine產生)
+程式的進入點 (`Global`)，以及接下來每個執行到的function，都有自己的execution context (由JavaScript engine產生)
 
-Execution context除了執行當前function的code以外，**還包含了一些其它的東西 (global, this, ...etc.)**
+Execution context除了執行當前function的code以外，**還包含了一些其它的東西 (Global object, this, ...etc.)**
 
 詳細參考: [Execution Context](#execution-context)
 
 
 ## <a name="objects"></a>Objects
-這邊只先解釋什麼是Javascript中的object
+這邊只先解釋什麼是JavaScript中的object
 
-其它語言的object可能比較複雜，但是在Javascript中，object很簡單就是**"A collection of name value pairs"**
+其它語言的object可能比較複雜，但是在JavaScript中，object很簡單就是**"A collection of name value pairs"**
 
 ## <a name="global"></a>The Global Environment and The Global Object
 以在browser中為例，`Global Object`為window
 
-且在global的execution context，`this`指向`Global Object` (也就是window)
+且在`Global`的execution context，`this`指向`Global Object` (也就是window)
 
-``` javascript
+``` JavaScript
 var a = 'Hello, world!';
 function b() {...}
 ```
 
-`a`跟`b`定義在global execution context中 -> 被attach到`Global Object`
+`a`跟`b`定義在`Global` execution context中 -> 被attach到`Global Object`
 
 ## <a name="execution-context"></a>The Execution Context - Creation and Hoisting
 每個execution context可以分成兩個階段，Creation / Execution:
 
 <img src="./res/Ch01/Execution Context.jpeg">
 
-1. 在creation階段，Javascript engine會建立此execution context的:
+1. 在creation階段，JavaScript engine會建立此execution context的:
     * Global Object
     * this (比較複雜，這邊先略過)
     * [Outer Environment](#outer-environment)
@@ -97,7 +89,7 @@ function b() {...}
 
 undefined是一個特別的keyword，會佔memory space，代表此變數還沒設值
 
-``` javascript
+``` JavaScript
 var a;
 console.log(a);
 
@@ -123,11 +115,11 @@ a is undefined!
 ### <a name="hoisting"></a>Hoisting (Tip: 不要依賴hoisting來設計程式)
 一般常見的解釋，所有variables和function的宣告，在實際執行時，都會被移動到context的最上面，但真的是code被"移動"嗎?
 
-了解execution context的兩個階段行為後，hoisting就是件很當然的事情了，而**Javascript engine並沒有真的將code往上移**
+了解execution context的兩個階段行為後，hoisting就是件很當然的事情了，而**JavaScript engine並沒有真的將code往上移**
 
 <img src="./res/Ch01/Hoisting_1.jpeg" width="700">
 
-首先是Global的execution context被建立，放到stack中
+首先是`Global`的execution context被建立，放到stack中
 
 在creation階段，variable `a`跟function `b`的memory space先被設起來 (值為`undefined`和`function`)
 
@@ -139,7 +131,7 @@ b的creation階段，沒有任何的variables跟functions
 
 開始execution階段，在console輸出"Called b!"
 
-b的execution context結束，從stack裡pop出後，回到Global的execution context繼續執行
+b的execution context結束，從stack裡pop出後，回到`Global`的execution context繼續執行
 
 <img src="./res/Ch01/Hoisting_3.jpeg" width="700">
 
@@ -147,7 +139,7 @@ b的execution context結束，從stack裡pop出後，回到Global的execution co
 
 然後將`a`的值設為'Hello World!'
 
-Global的execution context結束，從stack裡pop出後，stack空了程式結束
+`Global`的execution context結束，從stack裡pop出後，stack空了程式結束
 
 #### 若是`let`/`const`/`class`的case，它們有被hoisting嗎?
 參考[stackoverflow](http://stackoverflow.com/questions/31219420/are-variables-declared-with-let-or-const-not-hoisted-in-es6)，它們有被hoisting，但是若將variable初始化的過程分成:
@@ -161,7 +153,7 @@ Global的execution context結束，從stack裡pop出後，stack空了程式結�
 
 只有在execution階段跑到`let`的statement的時候，才可以access
 
-``` javascript
+``` JavaScript
 console.log(name); // ReferenceError
 let name = "John";
 ```
@@ -172,7 +164,7 @@ let name = "John";
 
 Case 1:
 
-``` javascript
+``` JavaScript
 function b() {...}
 function a() {...}
 ```
@@ -181,7 +173,7 @@ function a() {...}
 
 Case 2:
 
-``` javascript
+``` JavaScript
 function a() {
     function b() {...}
 }
@@ -196,7 +188,7 @@ function a() {
 
 思考下面這個例子:
 
-``` javascript
+``` JavaScript
 function b() {
     console.log(myVar);
 }
@@ -242,13 +234,13 @@ Output為1 (不是undefined也不是2)，詳細過程:
 現在`b`在outer environment`a`中找不到`myVar`，再往`a`的outer environment `Global`找到`myVar`為1
 
 ## <a name="thread"></a>Single Threaded and Asynchronous Callbacks
-以在browser中執行為例，雖然browser不只做Javascript這件事
+以在browser中執行為例，雖然browser不只做JavaScript這件事
 
-但對Javascript programmer來說，**Javascript就是single thread**
+但對JavaScript programmer來說，**JavaScript就是single thread**
 
-Javascript Engine只是browser中的一部分 (e.g. Javascript, Rendering Engine, Http Request...etc.)
+JavaScript Engine只是browser中的一部分 (e.g. JavaScript, Rendering Engine, Http Request...etc.)
 
-只有當Javascript的整個execution stack為empty的時候 (**包括`Global` execution context**)
+只有當JavaScript的整個execution stack為empty的時候 (**包括`Global` execution context**)
 
 Event Queue中的event才會進到stack，執行特定區段的code (也就是callback，e.g. `clickHandler()`)
 
