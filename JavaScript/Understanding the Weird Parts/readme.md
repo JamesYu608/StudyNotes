@@ -15,3 +15,4 @@ JavaScript有許多成熟、好用的library，例如jQuery、AngularJS等等
 [JavaScript: Understanding the Weird Parts](https://www.udemy.com/understand-javascript/learn/v4/overview)
 
 1. [Execution Contexts and Lexical Environments](1 - Execution Contexts and Lexical Environments.md)
+2. [Types and Operators](2 - Types and Operators.md)

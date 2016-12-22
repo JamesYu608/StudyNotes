@@ -112,6 +112,8 @@ a is undefined!
 
 不然在debug的時候，一個variable如果是undefined，會不好分辨到底是因為它還沒被設值，還是你把它設為undefined?
 
+**若有類似的需求，應該要使用`a = null`來代替`a = undefined`**
+
 ### <a name="hoisting"></a>Hoisting (Tip: 不要依賴hoisting來設計程式)
 一般常見的解釋，所有variables和function的宣告，在實際執行時，都會被移動到context的最上面，但真的是code被"移動"嗎?
 
