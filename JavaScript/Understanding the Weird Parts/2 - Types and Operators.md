@@ -108,7 +108,7 @@ Number `1`被自動轉換成String `'1'`
 
 答案是因為`3 < 2 < 1`中，`3 < 2`會先做 (`<`為left-to-right)
 
-return false後做`false < 3`，false要怎麼跟3來做比較? **Coerce成Number再比**
+return false後接著做`false < 1`，false要怎麼跟1來做比較? **Coerce成Number再比**
 
 ```javascript
 // 這邊為了展示Number Coercion後的結果，使用Number()，不然的話不建議用這種方式來create number
@@ -116,7 +116,7 @@ Number(false) // 0
 Number(true) // 1
 ```
 
-所以`false < 3`會變成`0 < 3`，return true，這就是為何`3 < 2 < 1`會是true
+所以`false < 1`會變成`0 < 1`，return true，這就是為何`3 < 2 < 1`會是true
 
 而`1 < 2 < 3`結果為true，只是因為`true < 3`變成`1 < 3`，結果剛好為true罷了
 
@@ -127,7 +127,7 @@ Number(true) // 1
 
 **Tip: 在99%的情況下，使用`===`和`!==`來做比較的判斷 (不會coercion，若type不一樣就直接return false)**
 
-只有在很確定在比較的時候，需要coercion才用`==`和`!=`
+只有需要先做coercion再比的case，才用`==`和`!=`
 
 ## <a name="existence-boolean"></a>Existence and Booleans
 表示"不存在"一般來說有三種方式:
@@ -149,7 +149,7 @@ if (a) { // 以上三種以外的情況
 **注意0的case**，`Boolean(0)`為`false`
 
 ```javascript
-if (a || a === 0) { // 若有可能發生a為0，加入判斷，以免被當成沒有值
+if (a || a === 0) { // 若a有可能為0的話，加入額外的判斷以免被當成沒有值
     console.log('Something is there.');
 }
 ```
@@ -223,11 +223,11 @@ console.log(libraryName);
 </html>
 ```
 
-結果為"Lib 2"，這是因為`index.html`並不是將各個`.js`分別建立execution context來執行，而是照順序執行，所以
+結果為"Lib 2"，這是因為`index.html`並不是將各個`.js`分別建立execution context來執行，而是照順序在`Global`執行，所以
 
-1. `libraryName: 'Lib 1'`先被attach到`Global object`
-2. 值被改成`'Lib 2'`
-3. 最後在console輸出`'Lib 2'`
+1. (`lib1.js`) `libraryName: 'Lib 1'`先被attach到`Global object`
+2. (`lib2.js`) 值被改成`'Lib 2'`
+3. (`app.js`) 最後在console輸出`'Lib 2'`
 
 若順序變成:
 
