@@ -68,7 +68,7 @@ console.log(person.firstNameProperty); // undefined，等同於person["firstName
 console.log(person[firstNameProperty]); // James，等同於person["firstname"]
 ```
 
-#### 注意nested properties
+#### 注意nested properties容易發生的error
 ```javascript
 // person: {firstname: "James", lastname: "Yu"}
 person.address = new Object(); // address是person的object property
@@ -160,7 +160,7 @@ var jsonValue = JSON.parse('{ "firstname": "James", "isAProgrammer": true }') //
 ## <a name="function"></a>Functions are Objects
 *__First class function: Everything you can do with other types, you can do with function__*
 
-Assign給variable，當成參數傳遞，使用literal syntax建立function...etc.為[functional programming](https://en.wikipedia.org/wiki/Functional_programming)的重要特性
+Assign給variable，當成參數傳遞，使用literal syntax建立function等等。為[functional programming](https://en.wikipedia.org/wiki/Functional_programming)的重要特性
 
 ### Function的架構:
 <img src="./res/Ch03/Function.jpeg" width="400">
