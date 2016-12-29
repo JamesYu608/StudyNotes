@@ -81,7 +81,7 @@ function b() {...}
     * [Outer Environment](#outer-environment)
     * 尋找此context中，所有的variables和functions，將memory space設起來
         * **Variables: 值一律為`undefined`** (包括`var a = function() {...}`的case)
-        * **Functions: 標記為`function`**
+        * **Functions: 之後會再做比較詳細的討論，這邊先簡單標記為`function`**
 
 2. 在execution階段，一行一行依序執行此context中的statements  
 
