@@ -25,3 +25,5 @@ JavaScript有許多成熟、好用的library，例如jQuery、AngularJS等等
 1. [Execution Contexts and Lexical Environments](1 - Execution Contexts and Lexical Environments.md)
 2. [Types and Operators](2 - Types and Operators.md)
 3. [Objects and Functions](3 - Objects and Functions.md)
+4. [Object-Oriented Javascript and Prototypal Inheritance](4 - Object-Oriented Javascript and Prototypal Inheritance.md)
+5. [Building Objects](5 - Building Objects.md)

@@ -33,7 +33,7 @@ from [JavaScript: Understanding the Weird Parts](https://www.udemy.com/understan
 它們也會在在memory space中佔有空間(0x002 ~ 0x004)，object本身保存的是它們空間位址的**references**
 
 ### <a name="access"></a>存取object的properties或methods
-有兩種方式 (operators，precedence僅次於grouping):
+有兩種方式 (都是operators，它們的precedence僅次於grouping):
 
 1. Member Access (`.`)
 2. Computed Member Access (`[...]`)
@@ -68,7 +68,7 @@ console.log(person.firstNameProperty); // undefined，等同於person["firstName
 console.log(person[firstNameProperty]); // James，等同於person["firstname"]
 ```
 
-#### 注意nested properties容易發生的error
+#### 注意nested properties容易發生類似NPE的error
 ```javascript
 // person: {firstname: "James", lastname: "Yu"}
 person.address = new Object(); // address是person的object property
@@ -212,7 +212,7 @@ var myGreet = function() {
 }
 ```
 
-這是因為execution context在creation階段的時候，function `greet`已經被標記為`function`
+這是因為execution context在creation階段的時候，function `greet`已經被定義
 
 但variable`myGreet`在creation階段是`undefined`，所以在execution階段跑到`myGreet()`的時候就會丟error，若改成:
 
@@ -223,7 +223,7 @@ var myGreet = function() {
 myGreet(); // hi，沒問題
 ```
 
-#### Function Statements會被hoisting並定義 (建立) function object
+#### Function Statements會被hoisting，並定義 (建立) function object
 ```javascript
 function hello(name) {
    console.log('hello ' + name);
