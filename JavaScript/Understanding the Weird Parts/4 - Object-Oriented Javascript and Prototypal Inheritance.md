@@ -3,7 +3,7 @@ from [JavaScript: Understanding the Weird Parts](https://www.udemy.com/understan
 
 ## Outline
 * [Understanding the Prototype](#prototype)
-* [Reflection and Extend](#reflection)
+* [Reflection and Extend (underscore)](#reflection)
 
 ## <a name="prototype"></a>Understanding the Prototype
 **JavaScript的inheritance很單純、彈性，不用想太複雜**
@@ -22,11 +22,13 @@ from [JavaScript: Understanding the Weird Parts](https://www.udemy.com/understan
 *__vs Scope Chain:__ Prototype Chain是在object中找properties，而Scope Chain是在execution context以及outer environment中找variables*
 
 #### Example
-這邊只是簡單示範`__proto__`的運作方式
+**實際上我們在建立繼承體系的時候:**
 
-**實際上我們在建立繼承體系的時候不會，也不應該使用`obj1.__proto__ = obj2`的方式去實作 (有底層的效能問題)**
+1. 不會，也不該直接去存取或改變`__proto__` (例如`obj1.__proto__ = obj2`，這樣底層的效能不佳)，實作上有更標準的做法
 
-且會牽扯到function在當作constructor使用的時候，`prototype` (不是`__proto__`)這個property 的作用，之後會再探討
+2. function在做為constructor時，它會利用到另外一個property，稱為`prototype` (與每個object都有的`__proto__` property不同。之後會再探討function的`prototype`在繼承體系中的角色
+    
+這邊只是簡單示範`__proto__`的運作方式:
 
 ```javascript
 var person = {
@@ -83,7 +85,7 @@ firstname: James
 lastname: Yu
 ```
 
-## <a name="reflection"></a>Reflection and Extend
+## <a name="reflection"></a>Reflection and Extend (underscore)
 Underscore有提供一個方法叫做[`extend`](http://underscorejs.org/#extend)
 
 是利用reflection的方法，來將source objects的所有properties，copy到destination object
@@ -121,4 +123,4 @@ var createAssigner = function(keysFunc, undefinedOnly) {
 ```
 
 * 這邊[void 0](#http://stackoverflow.com/questions/7452341/what-does-void-0-mean)就是`undefined`
-* 在ES6中有內建`extend`的實作，只有名字相同，容易混淆...
+* **在ES6中有內建`extend`的實作，與underscore的`extend`兩者只有名字相同，容易混淆...**
