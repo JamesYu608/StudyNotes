@@ -275,7 +275,7 @@ Object(a) === a // true
 
     讓`Temp`建立出的object，在不需要的時候可以正常被GC
     
-    <img src="./res/Ch05/polyfill.jpeg" width="600">
+    <img src="./res/Ch05/Polyfill.jpeg" width="600">
 
 ## <a name="class"></a>ES6 and Classes
 其它語言: `class` 並不是真正的object instance，而是template的概念
