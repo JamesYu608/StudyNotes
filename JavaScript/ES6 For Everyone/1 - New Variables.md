@@ -8,13 +8,9 @@
 * [`Object.freeze(obj)`](#freeze)
 
 ## <a name="declaration"></a>`var`, `let`, `const`該選擇何種宣告方式?
-JavaScript中有三種宣告方式: `var`, `let`, `const`
+JavaScript中有三種宣告方式: `var`, `let`, `const`，在ES6中不要再使用`var`
 
-在ES6中不要再使用`var`
-
-一般來說一律先用`const`
-
-若之後發現需要rebinding，將`const`改成`let`
+**一般來說一律先用`const`，若之後發現需要rebinding，再將`const`改成`let`**
 
 ## <a name="scope"></a>Scope & `var`/`let` in for Loop
 ### Scope
@@ -85,7 +81,7 @@ console.log(person);
 { name: 'James', age: 29 }
 ```
 
-使用`Object.freeze(obj)`來讓properties也不能被修改
+使用`Object.freeze(obj)`來讓`obj`的properties不能被修改
 
 ``` javascript
 const person = {
@@ -93,12 +89,16 @@ const person = {
     age: 28
 };
 
-const james = Object.freeze(person);
+Object.freeze(person);
 person.age = 29; // 改了沒用 (strict mode下會丟error)
-console.log(james);
+console.log(person);
 
 // Output:
-{ name: 'James', age: 28 }
+{ name: 'James', age: 28 } // age仍為28
+```
+
+```javascript
+const james = Object.freeze(person); // Binding和target都不能修改
 ```
 
 **注意若frozen object的property也是指向某object，則該object的properties仍然可以修改 (除非也把它frozen)**
@@ -111,10 +111,11 @@ const person = {
 
 
 const james = Object.freeze(person);
-person.home.city = 'Tokyo'; // 可以改
+james.home = {country: 'Taiwan'}; // 不能改
+james.home.city = 'Tokyo'; // 可以改
 console.log(james);
 
 // Output:
-{ name: 'James', home: { city: 'Tokyo' } }
+{ name: 'James', home: { city: 'Tokyo' } } // city被修改
 ```
 
