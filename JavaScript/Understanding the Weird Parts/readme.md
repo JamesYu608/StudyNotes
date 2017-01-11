@@ -29,3 +29,4 @@ JavaScript有許多成熟、好用的library，例如jQuery、AngularJS等等
 5. [Building Objects](5 - Building Objects.md)
 6. [Odds and Ends](6 - Odds and Ends.md)
 7. [Deep Dive into Source Code: jQuery](7 - Deep Dive into Source Code_jQuery.md)
+8. [Build Library / Framework](Build Framework)
