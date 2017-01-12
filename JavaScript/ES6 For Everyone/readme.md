@@ -16,3 +16,9 @@
     - Tagged Template Literals
         - Additional: debugger
     - 進階應用
+
+* [__MODULE #4 - Additional String Improvements__](4 - Additional String Improvements.md)
+    - `.startsWith()`
+    - `.endsWith()`
+    - `.includes()`
+    - `.repeat()`
