@@ -10,3 +10,9 @@
     - Arrow Functions and this
         - When NOT to use an Arrow Function
     - Default Function Arguments* 
+
+* [__MODULE #3 - Template Strings__](3 - Template Strings.md)
+    - Template Strings Introduction
+    - Tagged Template Literals
+        - Additional: debugger
+    - 進階應用

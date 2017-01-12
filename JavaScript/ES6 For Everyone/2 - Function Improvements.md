@@ -121,6 +121,6 @@ function greeting(greet = 'Hello', name = 'my friend', end = '!') {
 
 greeting(); // Hello my friend!
 
-// 有些default有些給值
+// 有些arguments有給值
 greeting(undefined, 'James', undefined); // Hello James!
 ```
