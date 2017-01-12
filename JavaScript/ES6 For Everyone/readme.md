@@ -4,3 +4,9 @@
     - `var`, `let`, `const`該選擇何種宣告方式?
     - Scope & `var`/`let` in for Loop
     - `Object.freeze(obj)`
+
+* [__MODULE #2 - Function Improvements: Arrows and Default Arguments__](2 - Function Improvements.md)
+    - Arrow Functions Introduction
+    - Arrow Functions and this
+        - When NOT to use an Arrow Function
+    - Default Function Arguments* 
