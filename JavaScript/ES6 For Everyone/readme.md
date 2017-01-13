@@ -22,3 +22,11 @@
     - `.endsWith()`
     - `.includes()`
     - `.repeat()`
+
+* [__MODULE #5 - Destructuring__](5 - Destructuring.md)
+    - Destructuring Objects
+        - 基本 / Nested / Rename / Default Value
+        - 應用: 只取回傳result (object) 的部分properties / 不用照順序的function參數
+    - Destructing Arrays
+        - 基本 / Rest (...)
+        - 應用: Swapping Variables with Destructuring
