@@ -143,22 +143,23 @@ b的execution context結束，從stack裡pop出後，回到`Global`的execution 
 
 `Global`的execution context結束，從stack裡pop出後，stack空了程式結束
 
-#### 若是`let`/`const`/`class`的case，它們有被hoisting嗎?
-參考[stackoverflow](http://stackoverflow.com/questions/31219420/are-variables-declared-with-let-or-const-not-hoisted-in-es6)，它們有被hoisting，但是若將variable初始化的過程分成:
+#### 若是`let`/`const`的case，它們有被hoisting嗎?
+參考[stackoverflow](http://stackoverflow.com/questions/31219420/are-variables-declared-with-let-or-const-not-hoisted-in-es6)，它們有被hoisting，但是差別在於creation階段:
 
-1. 配置variable名稱 (狀態為uninitialised，此時去access它的話就會丟error)
-2. 將值設為undefined (狀態initialised，可以access)
-
-可以想成`var`在creation階段做了這兩件事
-
-但是像`let`的話，在creation階段只先配置variable名稱
-
-只有在execution階段跑到`let`的statement的時候，才可以access
+* `var`: 配置variable名稱，立即binding到`undefined`，狀態為initialised -> 可以access
+* `let`/`const`: 配置variable名稱，狀態為uninitialised -> 此時去access它的話就會丟error (稱為**temporal dead zone**)
 
 ```javaScript
 console.log(name); // ReferenceError
 let name = "John";
 ```
+
+直到execution階段，跑到`let`/`const` keyword:
+
+* `let`: 沒有給值的話一樣binding到`undefined`
+* `const`: 第一次跑到就要給值
+
+之後variable的狀態才變成initialised，可以access
 
 ## <a name="outer-environment"></a>Scope Chain and Outer Environment
 ### 怎麼判斷當前execution context的outer environment是誰?
