@@ -30,3 +30,7 @@
     - Destructing Arrays
         - 基本 / Rest (...)
         - 應用: Swapping Variables with Destructuring
+
+* [__MODULE #6 - Iterables & Looping__](6 - Iterables & Looping.md)
+
+* [__MODULE #11 - Symbols__](11 - Symbols.md)
