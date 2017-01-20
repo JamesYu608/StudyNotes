@@ -34,3 +34,9 @@
 * [__MODULE #6 - Iterables & Looping__](6 - Iterables & Looping.md)
 
 * [__MODULE #11 - Symbols__](11 - Symbols.md)
+
+* [__MODULE #16 - Generators__](16 - Generators.md)
+    - Introducing Generators
+        - Simple Example
+        - `.next()`中可以傳argument給`yield`
+    - Using Generators for Ajax Flow Control
