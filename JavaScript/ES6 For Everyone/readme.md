@@ -32,6 +32,14 @@
         - 應用: Swapping Variables with Destructuring
 
 * [__MODULE #6 - Iterables & Looping__](6 - Iterables & Looping.md)
+    - Introduction of Iterable / Iterator
+        - Iterable Object
+        - Iterator Object
+        - Generator object同時是Iterable和Iterator object
+        - Built-in的iterable object
+    - The for of Loop in Array: 四種方法
+    - Array.entries
+    - Using for...of with Objects (X)
 
 * [__MODULE #11 - Symbols__](11 - Symbols.md)
 
