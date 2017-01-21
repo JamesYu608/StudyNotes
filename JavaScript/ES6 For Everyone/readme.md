@@ -41,6 +41,12 @@
     - Array.entries
     - Using for...of with Objects (X)
 
+* [__MODULE #7 - An Array of Array Improvements__](7 - An Array of Array Improvements.md)
+    - `Array.from()` and `Array.of()`
+        - Array-Like
+    - `.find()` and `.findIndex()`
+    - `.some()` and `.every()`
+
 * [__MODULE #11 - Symbols__](11 - Symbols.md)
 
 * [__MODULE #16 - Generators__](16 - Generators.md)
