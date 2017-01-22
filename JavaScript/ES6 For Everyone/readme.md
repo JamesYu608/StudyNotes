@@ -47,6 +47,14 @@
     - `.find()` and `.findIndex()`
     - `.some()` and `.every()`
 
+* [__MODULE #8 - Say Hello to ...Spread and ...Rest__](8 - Spread and Rest.md)
+    - Spread
+        1. Array Literal
+        2. Function Calls
+    - Rest
+        1. Destructuring
+        2. Parameters in Function
+
 * [__MODULE #11 - Symbols__](11 - Symbols.md)
 
 * [__MODULE #16 - Generators__](16 - Generators.md)
