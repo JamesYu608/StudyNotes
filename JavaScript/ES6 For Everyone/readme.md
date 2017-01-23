@@ -55,6 +55,18 @@
         1. Destructuring
         2. Parameters in Function
 
+* [__MODULE #9 - Object Literal Upgrades__](9 - Object Literal Upgrades.md)
+    - Shorthand property / method names
+    - Computed property names
+
+* [__MODULE #10 - Promises__](10 - Promises.md)
+    - Promises Introduction
+        - Promise Object
+        - 許多asynchronous的built-in API都是回傳promise object
+    - Chaining Promises + Flow Control
+        - .then和.catch的預設return
+    - Working with Multiple Promises
+
 * [__MODULE #11 - Symbols__](11 - Symbols.md)
 
 * [__MODULE #16 - Generators__](16 - Generators.md)
