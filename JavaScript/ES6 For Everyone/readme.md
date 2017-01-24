@@ -69,6 +69,13 @@
 
 * [__MODULE #11 - Symbols__](11 - Symbols.md)
 
+* [__MODULE #12 - Code Quality with ESLint__](12 - Code Quality with ESLint.md)
+    - Getting Started with ESLint
+    - 常用的configuration
+    - Scope
+    - ESLint Plugins
+    - Only Allow ESLint Passing Code into your git repos
+
 * [__MODULE #16 - Generators__](16 - Generators.md)
     - Introducing Generators
         - Simple Example
