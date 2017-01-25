@@ -76,7 +76,9 @@
     - ESLint Plugins
     - Only Allow ESLint Passing Code into your git repos
 
-* [__(unfinished) MODULE #13 - JavaScript Modules and Using npm__](13 - JavaScript Modules and Using npm.md)    
+* [__(unfinished) MODULE #13 - JavaScript Modules and Using npm__](13 - JavaScript Modules and Using npm.md)
+
+* [__MODULE #15 - Classes__](15 - Classes.md)    
 
 * [__MODULE #16 - Generators__](16 - Generators.md)
     - Introducing Generators
