@@ -3,7 +3,7 @@
 講者: [wesbos](https://github.com/wesbos) - [ES6 for Everyone](https://es6.io/)
 
 # Prior Knowledge
-[Object-Oriented Javascript and Prototypal Inheritance](StudyNotes/blob/master/JavaScript/Understanding the Weird Parts/4 - Object-Oriented Javascript and Prototypal Inheritance.md)
+[Object-Oriented Javascript and Prototypal Inheritance](/StudyNotes/blob/master/JavaScript/Understanding the Weird Parts/4 - Object-Oriented Javascript and Prototypal Inheritance.md)
 
 # Outline
 
