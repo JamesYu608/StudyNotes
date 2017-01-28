@@ -79,6 +79,10 @@
 * [__(unfinished) MODULE #13 - JavaScript Modules and Using npm__](13 - JavaScript Modules and Using npm.md)
 
 * [__MODULE #15 - Classes__](15 - Classes.md)    
+    - Getter / Setter (ES5 ~ )
+    - Say Hello to Classes
+    - Extending Classes and using super()
+    - Extending Arrays with Classes for Custom Collections
 
 * [__MODULE #16 - Generators__](16 - Generators.md)
     - Introducing Generators
