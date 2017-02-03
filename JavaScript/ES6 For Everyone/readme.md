@@ -26,7 +26,7 @@
 * [__MODULE #5 - Destructuring__](5 - Destructuring.md)
     - Destructuring Objects
         - 基本 / Nested / Rename / Default Value
-        - 應用: 只取回傳result (object) 的部分properties / 不用照順序的function參數
+        - 應用: 只取回傳result (object) 的部分properties / 不用照順序的function parameters
     - Destructing Arrays
         - 基本 / Rest (...)
         - 應用: Swapping Variables with Destructuring
@@ -89,3 +89,15 @@
         - Simple Example
         - `.next()`中可以傳argument給`yield`
     - Using Generators for Ajax Flow Control
+
+* [__MODULE #17 - Proxies__](17 - Proxies.md)
+    - What are Proxies?
+    - Using Proxies to combat silly errors
+
+* [__MODULE #18 - Set and WeakSet__](18 - Set and WeakSet.md)
+    - Sets / Iterating Sets
+    - WeakSets
+
+* [__MODULE #19 - Map and WeakMap__](19 - Map and WeakMap.md)
+    - Maps / Iterating Maps
+    - WeakMaps

@@ -5,7 +5,7 @@
 # Outline
 * [Destructuring Objects](#object)
     * 基本 / Nested / Rename / Default Value
-    * [應用:](#object-example) 只取回傳result (object) 的部分properties / 不用照順序的function參數
+    * [應用:](#object-example) 只取回傳result (object) 的部分properties / 不用照順序的function parameters
 * [Destructing Arrays](#array)
     * 基本 / Rest (`...`)
     * [應用:](#array-example) Swapping Variables with Destructuring
@@ -99,7 +99,7 @@ GPB: 53
 MEX: 1330
 ```
 
-* 不用照順序的function參數
+* 不用照順序的function parameters
 
 ```javascript
 // 給default = {}是為了避免沒有傳參數進來，Error
