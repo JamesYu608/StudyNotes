@@ -6,7 +6,10 @@
     - JavaScript Engines and The ECMAScript Specification
     - V8 Under the Hood
         - Adding Features to JavaScript
-2. The Node Core
+2. [The Node Core](2 - The Node Core.md)
+    - What Does Javascript Need to Manage a Server?
+    - NodeJS要如何做到?
+    - Version and History
 3. Modules, Exports, and Require
 4. Events and the Event Emitter
 5. Asynchronous Code, libuv, The Event Loop, Streams, Files, and more…
