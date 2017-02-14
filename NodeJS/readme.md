@@ -27,7 +27,15 @@
         - 增加properties到module.exports
     - exports vs module.exports
     - Requiring Native (Core) Modules
-4. Events and the Event Emitter
+4. [Events and the Event Emitter](4 - Events and the Event Emitter.md)
+    - Conceptual Aside: Events
+    - Event Emitter (自己實作)
+    - The Node Event Emitter (用native core module)
+        - Magic String
+    - Inheriting From the Event Emitter (util.inherits)
+        - Pattern: Parent.call(this)
+    - Inheriting From the Event Emitter (class)
+    - Export Your Event Emitter
 5. Asynchronous Code, libuv, The Event Loop, Streams, Files, and more…
 6. HTTP and being a Web Server
 7. NPM: the Node Package Manager
