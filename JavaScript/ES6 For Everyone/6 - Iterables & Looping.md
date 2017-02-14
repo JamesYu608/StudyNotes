@@ -74,6 +74,15 @@ for (const item of obj) {
 }
 ```
 
+#### 為什麼要分iterable和iterator兩種protocol?
+直接讓iterable object實作`next`不是比較單純?
+
+這是因為iterator object必須keep一個當前位置的index
+
+若將這個index放在iterable object中，則有多個地方同時在loop object的時候就會大亂
+
+現在每個loop都使用各自獨立的iterator object就不會有這個問題
+
 ### <a name="generator"></a>Generator object同時是Iterable和Iterator object
 ```javascript
 function* gen() {
