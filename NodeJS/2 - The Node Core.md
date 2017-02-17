@@ -10,7 +10,7 @@ from: [Learn and Understand NodeJS](https://www.udemy.com/understand-nodejs/lear
 以下是標準ECMAScript沒有規範，但是若想作為server，必須要具備的能力:
 
 1. 有良好的方法組織、管理code，讓它們可以容易被維護和重複利用
-2. 處理檔案
+2. 處理檔案 (以及stream)
 3. 處理database
 4. 和網路溝通
 5. 接收從client來的request及發送response

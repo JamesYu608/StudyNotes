@@ -36,7 +36,20 @@
         - Pattern: Parent.call(this)
     - Inheriting From the Event Emitter (class)
     - Export Your Event Emitter
-5. Asynchronous Code, libuv, The Event Loop, Streams, Files, and more…
+5. [Asynchronous Code, libuv, The Event Loop, Streams, Files, and more…](5 - Asynchronous Code.md)
+    - **Server Checklist: 處理檔案 (以及stream)**
+    - libuv, The Event Loop, and Non-Blocking Asynchronous Execution
+        - Javascript is Synchronous
+        - Event Loop
+    - Conceptual Aside: Streams and Buffers
+    - Conceptual Aside: Binary Data, Character Sets, and Encodings
+    - Buffers
+        - ES6 Typed Arrays
+    - Files and fs
+    - Streams
+    - Conceptual Aside: Pipes
+    - Pipes
+        - Chaining
 6. HTTP and being a Web Server
 7. NPM: the Node Package Manager
 8. Express
