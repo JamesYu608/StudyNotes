@@ -14,7 +14,7 @@
     - NodeJS要如何做到?
     - Version and History
 3. [Modules, Exports, and Require](3 - Modules_Exports_Require.md)
-    - **Server Checklist: 有良好的方法組織、管理code，讓它們可以容易被維護和重複利用**
+    - **Server Checklist (1/6): 有良好的方法組織、管理code，讓它們可以容易被維護和重複利用**
     - Let's Build a Module
     - How Do Node Modules Really Work?: module.exports and require
         - 用圖來說明
@@ -37,7 +37,8 @@
     - Inheriting From the Event Emitter (class)
     - Export Your Event Emitter
 5. [Asynchronous Code, libuv, The Event Loop, Streams, Files, and more…](5 - Asynchronous Code.md)
-    - **Server Checklist: 處理檔案 (以及stream)**
+    - **Server Checklist (2/6): 處理檔案 (以及stream)**
+    - **Server Checklist (3/6): 處理需要花費較長時間的工作**
     - libuv, The Event Loop, and Non-Blocking Asynchronous Execution
         - Javascript is Synchronous
         - Event Loop
@@ -50,7 +51,16 @@
     - Conceptual Aside: Pipes
     - Pipes
         - Chaining
-6. HTTP and being a Web Server
+6. [HTTP and being a Web Server](6 - HTTP and being a Web Server.md)
+    - **Server Checklist (4/6): 和網路溝通**
+    - **Server Checklist (5/6): 接收從client來的request及發送response**
+    - Conceptual Aside: OSI model, Protocols and Socket
+        - OSI model & Protocols
+        - Socket
+    - NodeJS Http Server
+        - Html Template
+        - Streams and Performance
+    - Routing
 7. NPM: the Node Package Manager
 8. Express
 9. Javascript, JSON, and Databases
