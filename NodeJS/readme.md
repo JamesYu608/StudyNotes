@@ -62,7 +62,21 @@
         - Streams and Performance
     - Routing
 7. NPM: the Node Package Manager
-8. Express
+8. [Express](8 - Express.md)
+    - Making it Easier to Build a Web Server
+        - Additional: Environment Variables
+        - Handle HTTP Request (GET / POST / ...)
+    - Routes
+    - Static Files and Middleware
+        - Make my own middleware
+        - Static Files
+        - 3rd-party middleware
+    - Templates and Template Engines
+    - Querystring and Post Parameters
+        - Querystring
+        - Post Parameters
+    - Structuring an App
 9. Javascript, JSON, and Databases
+    - **Server Checklist (6/6): 處理database**
 10. The MEAN stack
 11. Let's Build an App! (in record time)

@@ -93,7 +93,7 @@ http.createServer(function(req, res) {
 }).listen(1337, '127.0.0.1');
 ```
 
-這邊是用`replace`的方式，自己實作一個陽春的html template，實際上有許多template engines可以使用 (e.g. [Pug](https://pugjs.org/api/getting-started.html)、[EJS](http://www.embeddedjs.com/))
+這邊是用`replace`的方式，自己實作一個陽春的html template，實際上有許多template engines可以使用 (e.g. [Pug](https://pugjs.org/api/getting-started.html)、[EJS](http://ejs.co/))
 
 #### Additional: Outputting JSON
 除了html以外，JSON也是我們常用來傳送的資料格式
