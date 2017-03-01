@@ -158,7 +158,9 @@ class Student extends School {
 }
 ```
 
-在使用`new`建立`Student` object的時候會拋出error，原因是還沒有呼叫`super(...)`
+在使用`new`建立`Student` object的時候會拋出null error，原因是還沒有呼叫`super(...)`
+
+在呼叫`super`前，constructor中的`this`為`null`
 
 ```javascript
 class School {
@@ -187,6 +189,43 @@ james // {schoolName: "My School", name: "James", score: 80}
 
 #### Methods
 <img src="./res/extends.jpeg">
+
+#### 較複雜例子 + 詳細流程
+```javascript
+class School {
+    constructor() {
+        // 4. this為empty object: {}，但是
+        // Empty object的__proto__ = Student.prototype
+        // Student.prototype的__proto__ = School.prototype
+        // 也就是說雖然是empty object，但prototype chain已經設好
+        this.inSchoolConstructor(); // 5. 因此可以呼叫inSchoolConstructor，印出log後return
+    }
+
+    inSchoolConstructor() {
+        console.log('Hi, we are in school constructor!');
+    }
+}
+
+class Student extends School {
+    constructor(name, score) {
+        // 2. 此時this = undefined
+        super(); // 3. 進入School的constructor
+        // 6. 此時this為prototype chain已經設好的empty object
+        this.name = name; // 7. {name: 'james'}
+        this.score = score; // 8. {name: 'james', score: 100}
+        this.hello = this.greeting(); // 9. {name: 'james', score: 100, hello: 'Hello'}
+    }
+    
+    greeting() {
+        return 'Hello';
+    }
+}
+
+const james = new Student('james', 100); // 1. 呼叫Student的constructor
+// 10. james = {name: 'james', score: 100, hello: 'Hello'}
+// Prototype chain在呼叫Student的constructor的super時就已經設好
+// __proto__為Student.prototype，Student.prototype的__proto__為School.prototype
+```
 
 ## <a name="array"></a>Extending Arrays with Classes for Custom Collections
 [Source Code](https://github.com/wesbos/es6.io/blob/master/15%20-%20Classes/extending-arrays-ANSWER.html)
