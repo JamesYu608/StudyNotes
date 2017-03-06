@@ -1,7 +1,7 @@
 ### [Machine Learning Specialization](https://www.coursera.org/specializations/machine-learning)
 Created by: University of Washington
 
-#### GraphLab CheatSheet
+#### [GraphLab Cheat Sheet](GraphLab Cheat Sheet.md)
 
 # Outline
 * Course 1: Machine Learning Foundations: A Case Study Approach
