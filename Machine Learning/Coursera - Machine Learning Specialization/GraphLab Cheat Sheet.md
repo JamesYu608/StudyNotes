@@ -36,7 +36,15 @@ sf = graphlab.SFrame(dataset)
 * 算row的數量
 
 ```python
+len(sf)
+# 等同
 sf.num_rows()
+```
+
+* 排序
+
+```python
+sf.sort('col name', ascending=False)
 ```
 
 ## 新增column
@@ -116,6 +124,7 @@ sf['Country'].apply(transform_country) # return SArray
 ```python
 sf['age'].mean()
 sf['age'].max()
+sf['age'].sum()
 ```
 
 
@@ -166,6 +175,13 @@ plt.plot(
     test_data['sqft_living'], sqft_model.predict(test_data), '-') # X, Y, 用線表示
 ```
 
+# 特定分析
+* 計算單字數量
+
+```python
+graphlab.text_analytics.count_words(products['review']) # return dict
+```
+
 # Machine Learning
 ## 切割training / testing dataset
 ```python
@@ -198,4 +214,37 @@ sqft_model.predict(house1)
 ### Evaluate
 ```python
 sqft_model.evaluate(test_data)
+```
+
+## Classifier
+### Model
+```python
+sentiment_model = graphlab.logistic_classifier.create(
+    train_data,
+    target='sentiment',
+    features=['word_count'], # dict
+    validation_set=test_data)
+```
+
+* Coefficients
+
+```python
+sentiment_model['coefficients']
+```
+
+### Predict
+```python
+# output_type='probability': 不輸出1 / 0，而是信心水準
+sentiment_model.predict(giraffe_reviews, output_type='probability')
+```
+
+### Evaluate
+```python
+# 1. Basic
+sentiment_model.evaluate(test_data)
+
+# 2. Roc Curve
+sentiment_model.evaluate(test_data, metric='roc_curve') # Output: 文字
+# 再做視覺化
+sentiment_model.show(view='Evaluation')
 ```
