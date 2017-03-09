@@ -397,11 +397,11 @@ function multiply(a, b) {
 }
 
 var multipleByTwo = multiply.bind(this, 2);
-// multipleByTwo等同於function multiply(2, b) { return 2 * b; }
+// multipleByTwo等同於function multiply(b) { return 2 * b; }
 console.log(multipleByTwo(4)); // 8
 
 var multipleByThree = multiply.bind(this, 3);
-// multipleByThree等同於function multiply(3, b) { return 3 * b; }
+// multipleByThree等同於function multiply(b) { return 3 * b; }
 console.log(multipleByThree(4)); // 12
 ```
 
