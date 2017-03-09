@@ -393,15 +393,15 @@ copyGreeting('Hola!'); // invoke: Hola! Mark Chen
 
 ```javascript
 function multiply(a, b) {
-    return a * b;   
+    return a * b;
 }
 
 var multipleByTwo = multiply.bind(this, 2);
-// multipleByTwo等同於function multiply(a, 2) { return a * 2; }
+// multipleByTwo等同於function multiply(2, b) { return 2 * b; }
 console.log(multipleByTwo(4)); // 8
 
 var multipleByThree = multiply.bind(this, 3);
-// multipleByThree等同於function multiply(a, 3) { return a * 3; }
+// multipleByThree等同於function multiply(3, b) { return 3 * b; }
 console.log(multipleByThree(4)); // 12
 ```
 
