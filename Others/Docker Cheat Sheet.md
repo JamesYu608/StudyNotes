@@ -99,7 +99,7 @@ docker run -d -p 5000:5000 --link redis dockerapp:v0.3 # 在dockerapp的/etc/hos
 * `-d` (**重要**): Detached mode
 * `--publish, -p`: Publish a container's port(s) to the host
 * `--name`: 若沒有指定會隨機命名container
-* `-rm`: Exit時remove container
+* `--rm`: Exit時remove container
 * `--restart`: Restart policy to apply when a container exits
 
 ### exec
@@ -150,12 +150,27 @@ RUN apt-get update && apt-get install -y \
 ```
 
 #### `CMD`
+一個Dockerfile只能有一個，可以在run的時候override
+
 ```bash
 FROM debian:jessie
 RUN apt-get update && apt-get install -y \
     git \
     vim
-CMD ["echo", "hello world"] # 一個Dockerfile只能有一個，沒指定的話使用base image的
+CMD ["echo", "hello world"] # 
+```
+
+#### `ENTRYPOINT`
+一個Dockerfile只能有一個，在run的時候**一定會執行，無法override**
+```bash
+ENTRYPOINT ["mvn", "jetty:run"]
+```
+
+配合`CMD`傳參數
+
+```bash
+ENTRYPOINT ["mvn", "jetty:run"]
+CMD ["arg1", "arg2"] # 這樣arg1和arg2就可以在run的時候override
 ```
 
 #### `COPY` (只能複製local file，**優先使用**)
@@ -169,12 +184,28 @@ COPY abc.txt /src/abc.txt
 ```bash
 RUN useradd -ms /bin/bash admin
 USER admin # 切換到admin這個user
+
+# 若該image只有adduser: RUN adduser -D -s /bin/bash admin
 ```
 
 Additonal: [useradd](http://linux.vbird.org/linux_basic/0410accountmanager.php#useradd)
 
 #### `WORKDIR`
 若不存在，會建立
+
+```bash
+RUN useradd -ms /bin/bash admin
+USER admin
+COPY app /app
+WORKDIR /app
+```
+
+#### `ENV`
+環境變數
+
+```bash
+ENV PROJECT_ROOT="/myProject" MODE="Test"
+```
 
 ### Remove Images
 ```bash
@@ -205,6 +236,12 @@ services:
 以上面例子而言，container在執行時的`/app` folder，會指到host machine的`./app` folder
 
 所以不需在Dockerfile中使用`COPY`
+
+* 清除閒置的volumes:
+
+```bash
+docker volume rm $(docker volume ls -qf dangling=true)
+```
 
 
 ### Commands
@@ -878,4 +915,34 @@ docker ps
 CONTAINER ID        IMAGE                    COMMAND                  CREATED             STATUS              PORTS                          NAMES
 1bad5b8f7a07        jleetutorial/dockerapp   "python app.py"          9 seconds ago       Up 5 seconds        138.197.77.11:5000->5000/tcp   master/dockerapp_dockerapp_1
 192c53270a0e        redis:3.2.0              "docker-entrypoint..."   11 seconds ago      Up 8 seconds        6379/tcp                       slave/dockerapp_redis_1
+```
+
+# `.dockerignore`
+以maven為例:
+
+```bash
+### Maven template
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.versionsBackup
+pom.xml.next
+release.properties
+dependency-reduced-pom.xml
+buildNumber.properties
+.mvn/timing.properties
+
+# Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
+!/.mvn/wrapper/maven-wrapper.jar
+
+# IntelliJ project files
+.idea
+*.iml
+out
+gen
+
+# git and others
+*.md
+.gitignore
+.git
 ```
