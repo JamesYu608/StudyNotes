@@ -6,7 +6,7 @@
 * [Destructuring Objects](#object)
     * 基本 / Nested / Rename / Default Value
     * [應用:](#object-example) 只取回傳result (object) 的部分properties / 不用照順序的function parameters
-* [Destructing Arrays](#array)
+* [Destructuring Arrays](#array)
     * 基本 / Rest (`...`)
     * [應用:](#array-example) Swapping Variables with Destructuring
 
@@ -111,7 +111,28 @@ const bill = tipCalc({ tip: 0.20, total: 200 }); // 傳object作為參數
 // 呼叫時等同於{ total = 100, tip = 0.15, tax = 0.13 } = { tip: 0.20, total: 200 }
 ```
 
-## <a name="array"></a>Destructing Arrays
+* 直接在function arguments中destructuring object
+
+```javascript
+function sayHello({name}) {
+    console.log(`Hello, ${name}!`);
+}
+sayHello({ name: 'James', age: 28 });
+
+// Output:
+Hello, James
+```
+
+等同於
+
+```javascript
+function sayHello(person) {
+    const name = person.name;
+    console.log(`Hello, ${name}!`);
+}
+```
+
+## <a name="array"></a>Destructuring Arrays
 * 基本
 
 ```javascript
